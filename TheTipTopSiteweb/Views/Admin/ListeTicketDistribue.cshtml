@@ -1,0 +1,26 @@
+﻿@model IEnumerable<TheTipTopSiteweb.Models.Coupon>
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+
+<h1>Les Tickets Distribué</h1>
+
+
+<table class="table">
+
+
+    <thead>
+    <td>Id Ticket</td>
+    <td>Code Ticket </td>Etat
+    <td>Etat</td></thead>
+    @if (Model != null)
+    {
+        foreach (var M in Model)
+        {
+            <tr>@M.Idcoupon<td></td>@M.CodeCoupon<td></td><td>@M.Etat</td></tr>
+        }
+    }
+</table>

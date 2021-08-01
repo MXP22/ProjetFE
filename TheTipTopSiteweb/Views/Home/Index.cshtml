@@ -1,0 +1,50 @@
+﻿@model TheTipTopSiteweb.Models.Participation
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<script>
+
+    function onSignIn(googleUser) {
+        var profile = googleUser.getBasicProfile();
+        console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
+        console.log('Name: ' + profile.getName());
+        console.log('Image URL: ' + profile.getImageUrl());
+        console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
+    }
+
+</script>
+<script src="https://apis.google.com/js/platform.js" async defer></script>
+<meta name="google-signin-client_id" content="911294321851-l0lg84ndaj6fpbvurl4sanp2j2ib6rd8.apps.googleusercontent.com">
+<div class="text-center" onload="onSignIn">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+<div class="g-signin2" data-onsuccess="onSignIn"></div>
+
+<a asp-controller="Home" asp-action="Authface">facebok</a>
+
+
+<form asp-controller="Home" asp-action="Index">
+
+    <label>Entrer votre code:</label>
+
+    <input type="number" asp-for="Numerocoupon" placeholder="Code Participation" class="input-group-text" />
+
+    <input type="submit" value="Valider" class="btn-dark" />
+
+
+</form>
+
+
+<p>@ViewData["Id"]</p>
+<p>@ViewData["Nom"]</p>
+<p>@ViewData["Description"]</p>
+
+
+
+
+
+
+
+
